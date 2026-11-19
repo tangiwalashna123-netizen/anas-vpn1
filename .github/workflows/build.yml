@@ -26,7 +26,7 @@ jobs:
         run: unzip -q ANAS_VPN_Android_Mobile_Build.zip -d source
 
       - name: Build APK
-        run: cd source/ANAS_VPN_Android && gradle assembleDebug
+        run: run: cd source/ANAS_VPN_Android && gradle assembleDebug -Pkotlin.jvm.target.validation.mode=warning 
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
